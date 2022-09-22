@@ -1,6 +1,5 @@
 import { html, SkhemataBase, property, CSSResult, css } from '@skhemata/skhemata-base';
 import Quill from 'quill';
-
 import { Snow } from './Snow';
 
 export class SkhemataEditorNotification extends SkhemataBase {
