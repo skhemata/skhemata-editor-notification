@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      background: #fafafa;
+    }
+  </style>
+</head>
+<body>
+  <div id="demo"></div>
+
+  <script type="module">
+    import { html, render } from '@skhemata/skhemata-base';
+    import { SkhemataEditorNotification } from '../dist/index.js';
+
+    customElements.define('skhemata-editor-notification', SkhemataEditorNotification)
+  
+    let htmlValue = '<div><p>Hi,</p><p>You can reconfirm your account by clicking on a link below. Please note that the activation link expires automatically in 72 hours from when it was sent.</p><p><a href="https://google.com">Click here to confirm your account</a></p><p>Thank you.</p></div>';
+
+    const changeText = (newText) => {
+      htmlValue = newText;
+      // console.log(htmlValue);
+  }
+    
+    render(
+      html`
+        <skhemata-editor-notification .htmlValue=${htmlValue} .changeText=${changeText}>
+        </skhemata-editor-notification>
+      `,
+      document.querySelector('#demo')
+    );
+  </script>
+</body>
+</html>
