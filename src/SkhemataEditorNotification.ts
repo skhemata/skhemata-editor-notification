@@ -31,6 +31,7 @@ export class SkhemataEditorNotification extends SkhemataBase {
 
   async firstUpdated(){
     super.firstUpdated();
+    
     if(this.shadowRoot){
       const element = <Element>this.shadowRoot?.getElementById('editor');
 
